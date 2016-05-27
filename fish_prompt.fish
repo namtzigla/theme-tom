@@ -42,7 +42,7 @@ function fish_prompt
     if git_is_touched
       echo -n -s " " $error_color (git_branch_name) $normal_color $dirty 
     else
-      echo -n -s " " $repository_color (git_branch_name) $normal_color (git_ahead $ahead $behind $diverged $none) 
+      echo -n -s " " $repository_color (git_branch_name) $normal_color "[" (git_ahead $ahead $behind $diverged $none) "]"
     end
   else
     echo -n -s " " $directory_color $cwd $normal_color 
