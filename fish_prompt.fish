@@ -19,7 +19,7 @@ function fish_prompt
   set -l success_color    (set_color $fish_pager_color_progress ^/dev/null; or set_color cyan)
   set -l error_color      (set_color $fish_color_error ^/dev/null; or set_color red --bold)
   set -l directory_color  (set_color green)
-  set -l repository_color (set_color $fish_color_cwd ^/dev/null; or set_color green)
+  set -l repository_color (set_color 10ff10)
 
   if test $last_command_status -eq 0
     echo -n -s $success_color $fish $normal_color
