@@ -18,7 +18,7 @@ function fish_prompt
   set -l normal_color     (set_color normal)
   set -l success_color    (set_color $fish_pager_color_progress ^/dev/null; or set_color cyan)
   set -l error_color      (set_color $fish_color_error ^/dev/null; or set_color red --bold)
-  set -l directory_color  (set_color green)
+  set -l directory_color  (set_color 30aa10)
   set -l repository_color (set_color 10ff10)
 
   if test $last_command_status -eq 0
@@ -40,7 +40,7 @@ function fish_prompt
 
 
     if git_is_touched
-      echo -n -s " " $error_color (git_branch_name) $normal_color $dirty 
+      echo -n -s " " $error_color (git_branch_name) $normal_color "[" $dirty "]" 
     else
       echo -n -s " " $repository_color (git_branch_name) $normal_color "[" (git_ahead $ahead $behind $diverged $none) "]"
     end
